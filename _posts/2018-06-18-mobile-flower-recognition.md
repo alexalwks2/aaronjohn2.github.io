@@ -27,4 +27,4 @@ These images could vary and have been taken at different angles and at different
 * Thanks to [Jimmie Goode](https://github.com/jimgoo/caffe-oxford102), he used this dataset to train a Convolutional Neural Network(CNN). He used Caffe to classify the images in the Oxford 102 category flower dataset. This Caffe model is what I used in my Swift project to build the app.
 
 You can get my [Flower/Plant recognition iOS app](//this is a comment.. leave app link in here, once it is published) in the App Store.
-It's pretty cool to see Caffe finally working on my iPhone to solve a real world problem, even without Internet connection (This is due to having an MLModel pre-loaded onto the device and it does not require an API.)
+It's pretty cool to see Caffe finally working on my iPhone to solve a real world problem. It even works without Internet connection, since the MLModel is pre-loaded onto the device and also does not require an API.
