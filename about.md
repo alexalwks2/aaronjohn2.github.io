@@ -7,7 +7,7 @@ permalink: /about/
 
 **Aaron John
 
-A wandering machine learning enthusiast, trying to expand my horizons. 
+A wandering machine learning enthusiast, wanting to expand my horizons. 
 This blog is about my long and exciting journey towards working on AI and powering AI on devices. Hence, users can benefit from state of the art AI solutions for their daily problems truly anywhere, anytime.
 
 June. 18, 2018
