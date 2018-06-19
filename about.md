@@ -12,4 +12,5 @@ A wandering machine learning enthusiast, wanting to expand my horizons. This blo
 This blog is inspired by [Andrej Karpathy’s](http://karpathy.github.io/) and [Chris Colah’s](http://colah.github.io/) blog. I will document the implementation of AI solutions relating to real world problems. In the documentation, I will also include source code repo's to my projects on github.
 
 June. 18, 2018
+
 aaron2nj@gmail.com
