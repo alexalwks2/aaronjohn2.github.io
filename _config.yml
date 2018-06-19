@@ -15,11 +15,6 @@ twitter_username: aaron2john
 github_username:  aaronjohn2
 
 # Build settings
+#markdown: redcarpet
 markdown: kramdown
-permalink: pretty
-
-highlighter: rouge
-kramdown:
-  input: GFM
-  auto_ids: true
-syntax_highlighter: rouge
+future: false
