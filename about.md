@@ -9,5 +9,6 @@ permalink: /about/
 
 A wandering machine learning enthusiast, wanting to expand my horizons. 
 This blog is about my long and exciting journey towards working on AI and powering AI on devices. Hence, users can benefit from state of the art AI solutions for their daily problems truly anywhere, anytime.
+This blog will contain material ranging from Deep Learning, Reinforcement Learning, Natural Language Processing and AI: Ideas, Examples, Tutorials, and Apps.
 
 June. 18, 2018
