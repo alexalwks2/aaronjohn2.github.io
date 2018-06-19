@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "Flower Recognition - Using CNN  on Mobile Device"
-date:   2018-18-06 19:30:27
+date:   2018-19-06 00:30:27
 categories: deep-learning, swift, CoreML-tools, python, Caffe-Model, CNN, MLModel, IOS, mobile, AI
 ---
 
