@@ -1,3 +1,4 @@
-Aaron John's Blog
+**Aaron John's Blog**
 
-DL, RL, NLP and AI: Ideas, Examples, Tutorials, and Apps
+My blog, uses Jekyll. It includes Ideas, Examples, Tutorials, and Apps on AI, DL, RL, NLP and other.
+
