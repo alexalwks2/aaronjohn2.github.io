@@ -5,7 +5,9 @@ comments: false
 permalink: /about/
 ---
 
-I'd like to document my own journey towards working on AI and powering AI on mobile devices so users can benefit from the state of the art AI solutions to their daily problems truly anywhere, anytime.
-The blog is about my long and exciting journey ahead, with mobile implementation of AI solutions as my focus.
+**Aaron John
+
+A wandering machine learning enthusiast, trying to expand my horizons. 
+This blog is about my long and exciting journey towards working on AI and powering AI on devices. Hence, users can benefit from state of the art AI solutions for their daily problems truly anywhere, anytime.
 
 June. 18, 2018
