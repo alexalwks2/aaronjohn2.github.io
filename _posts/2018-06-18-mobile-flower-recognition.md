@@ -9,7 +9,7 @@ categories: deep-learning, swift, CoreML-tools, python, Caffe-Model, CNN, MLMode
 In this project I converted a pre-trained Caffe Model into MLModel format which was later used in my Xcode project.
 The Caffe Model that I used had already been trained on thousands upon thousands of images. This pre-trained model was converted to a .MLModel so that it can be seen and used by my Swift files in order to build this app.
 
-Apple has released open source tools in python that allow you to convert any pre-trained model that had been trained using Caffe, Keras, scikit learn, and the list goes on.
+Apple has released open source tools in python that allow you to convert any pre-trained model that had been trained using Caffe, Keras, scikit learn, etc.
 
 Brief Description of app:
 
