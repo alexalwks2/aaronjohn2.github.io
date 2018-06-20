@@ -28,7 +28,10 @@ The most basic transmission line enclosures consist of a long tube that is tuned
 To start our project, we first had to do some research on what makes a good speaker. To do this, we researched different kinds of enclosures, drivers, and crossover systems. To make a final decision on what kind of enclosure we would choose and what kind of drivers we would use, we had to look at all the variables and pick what would suit our desired application the best. The first decision we made was for the type of enclosure. We ended up choosing the transmission line (t-line) also known as a quarter wave enclosure. The reason we ended up choosing this enclosure type is because of the low end response it offers and the fact that it also can help flatten out the midrange response to give more accurate sound reproduction. The transmission line operates on the principle of an acoustic standing wave at a quarter of the drivers resonant frequency. The transmission line enclosure at its bare essentials is basically a tapering resonant tube. The factors that change the enclosures acoustic response are the length of the tube and the rate at which it tapers either in on itself or out[6-9]. When coming up with the design of the enclosure, the variables can be looked at like a circuit. Like in electronics, when dealing with acoustics you need to deal with an acoustic impedance and resistance as well as other properties of the driver such as mechanical compliance and acoustic mass. To calculate the enclosure properties, you use the same mathematical theory that is used in electronics engineering to calculate damping and transient response of a series RCL (resistor, capacitor, inductor) circuit and substitute the acoustic equivalents[10].
 
 <div class="imgcap">
+<div style="display:inline-block">
 <img src="/assets/bass/image5.jpg">
+</div>
+<div style="display:inline-block; margin-left: 20px;">
 <img src="/assets/bass/image1.jpg">
 </div>
 
