@@ -22,6 +22,7 @@ In addition to the type of speakers, the enclosure used in the construction is a
 <img src="/assets/bass/image4.jpg">
 </div>
 
+
 The most basic transmission line enclosures consist of a long tube that is tuned to the length of a quarter of a wavelength of a certain frequency, usually around 30-40 Hz to help with low frequencies. Because of how efficient transmission line enclosures are in improving low frequency response, we decided to attempt to get the most bass and low frequency response we can from a small speaker. A reason why someone may want something like this is because of the great low end response and the small form factor that lets the speakers be more versatile[3-5].
 
 ## 3.Approach
@@ -32,12 +33,14 @@ To start our project, we first had to do some research on what makes a good spea
 <img src="/assets/bass/image1.jpg">
 </div>
 
+
 [7] R would be the driver acoustic resistance, C would be the drivers acoustic compliance, and L would be the drivers acoustic mass. The enclosures acoustic impedance is also included in the calculation of the “voltage” source in the acoustic circuit (figure 1.2) is the pressure source that is created from the driver at certain frequencies. This “voltage” source will be treated as an AC(alternating current) source at the drivers resonant frequency. What needs to be calculated is the “current” of the circuit which would be the drivers cone velocity in this case[10]. Once this is calculated, you can then calculate the rest of the properties needed for the enclosure.   
 
 <div class="imgcap">
 <img src="/assets/bass/image2.jpg">
 <img src="/assets/bass/image3.png" height="400">
 </div>
+
 
 [7] For the next step in our goal to create a speaker, we had to find a driver that would work well with a transmission line enclosure as well as being small. To pick the driver, we had to look at the driver's size, resonant frequency, frequency response, and moving mass. The driver needed to be small so that it would fit in our application. The frequency response as well as the resonant frequency are the two most important variables when it comes to choosing the driver. The reason these are important is because they dictate the level of accuracy a driver will have in sound reproduction. The Frequency response is the range of different frequencies that a driver can cover. This is usually depicted as a graph where the x axis is frequency and the y axis is the sensitivity and for the most part, a flatter response means a more realistic sound reproduction. The frequency response is also used to choose drivers to match together in a multi-driver system. The resonant frequency is the point at which the driver is most sensitive and resonates. It is important to know what the drivers resonant frequency is because you can design the enclosure to fix the jump in sensitivity at that frequency to make a better sounding speaker with a flat response. What we ended up choosing was a 3 inch aurasound driver that fit all of our needs[11]. After we chose the enclosure type and the driver, we had to design the enclosure. We used the principles of a transmission line discussed above to get design elements we need to create a transmission line. At its bare minimum, the transmission line is just a tapering tube that has a specific length and rate of taper. While this simplified design would work, it would not suit our needs. To make this type of enclosure fit into a small form factor like we want, we had to bend the enclosure. By making the tapering tube of the enclosure follow a series of folded curves, we are able to compress the design into a smaller form factor without compromising on the length of the transmission line.
 
@@ -56,6 +59,7 @@ Our goal with this project was to get the most bass and low end response possibl
 <br>
 Our final product.
 </div>
+
 
 ## 6.References
 
