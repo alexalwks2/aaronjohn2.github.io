@@ -6,7 +6,7 @@ date:   2015-12-01 11:00:00
 categories: Engineering, Sound, Physics, Math
 ---
 
-**A project by David Mohn and Aaron John. In this report we will be discussing the route we took in designing and creating a small form factor speaker with a high amount of bass without sacrificing sound quality.**
+**A project by David Mohn and Aaron John.** In this report we discuss the route we took in designing and creating a small form factor speaker with a high amount of bass, without sacrificing sound quality.
 
 ## 1.Abstract
 In this report we will be discussing the route we took in designing and creating a small form factor speaker with a high amount of bass without sacrificing sound quality. To do this, we did a lot of research on different types of enclosure designs and made a decision on what would suit our application the best. What we ended up choosing was the transmission line(T-line) enclosure, also known as a quarter wave enclosure. The reason we chose this enclosure over the other options is because of the T-lines excellent low frequency response as well as keeping the midrange and highs in check. After we chose the type of enclosure, we researched on what driver we would need to use. To choose the right driver, we had to look at many different options and as to which one had the correct specification to suit our needs. Once we had chosen the driver and had the idea of how we wanted our enclosure, we took the design principles of a T-line enclosure and created a 3d model of our enclosure in autodesk inventor. After designing the enclosure in autodesk, we then 3d printed the enclosures of our design. Finally we assembled all the parts of the speaker.
@@ -29,13 +29,8 @@ To start our project, we first had to do some research on what makes a good spea
 
 <div class="imgcap">
 <img src="/assets/bass/image5.jpg">
-</div>
-<p>
-  </br>
-<div class="imgcap">
 <img src="/assets/bass/image1.jpg">
 </div>
-</p>
 
 [7] R would be the driver acoustic resistance, C would be the drivers acoustic compliance, and L would be the drivers acoustic mass. The enclosures acoustic impedance is also included in the calculation of the “voltage” source in the acoustic circuit (figure 1.2) is the pressure source that is created from the driver at certain frequencies. This “voltage” source will be treated as an AC(alternating current) source at the drivers resonant frequency. What needs to be calculated is the “current” of the circuit which would be the drivers cone velocity in this case[10]. Once this is calculated, you can then calculate the rest of the properties needed for the enclosure.   
 
