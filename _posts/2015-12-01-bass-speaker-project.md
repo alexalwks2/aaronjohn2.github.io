@@ -29,7 +29,7 @@ To start our project, we first had to do some research on what makes a good spea
 <img src="/assets/bass/image5.jpg">
 </div>
 
-hel
+
 
 <div class="imgcap">
 <img src="/assets/bass/image1.jpg">
@@ -40,6 +40,8 @@ hel
 <div class="imgcap">
 <img src="/assets/bass/image2.jpg">
 </div>
+
+
 
 <div class="imgcap">
 <img src="/assets/bass/image3.jpg">
