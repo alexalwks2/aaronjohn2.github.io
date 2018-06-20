@@ -55,6 +55,12 @@ Once both enclosures where glued together and the wires and drivers were install
 ## 5.Summary
 Our goal with this project was to get the most bass and low end response possible from a small speaker. We chose to use the transmission line enclosure for this project because of its efficient reproduction of low frequencies while maintaining a flat response. Secondly, we ended up choosing a 3 inch aurasound drivers because of its small size and good frequency response. Next we designed the enclosure in autodesk inventor and then 3d printed the enclosure in a plastic material.  Finally, we assembled the 3d printed enclosure, driver, and other parts into the final design. 	
 
+<div style="text-align:center;">
+<iframe width="420" height="315" src="https://www.youtube.com/embed/Z0m_2z4FU4s?autoplay=1&amp;loop=1&amp;rel=0&amp;showinfo=0&amp;playlist=YOW8m2YGtRg" frameborder="0" allowfullscreen></iframe>
+<br>
+Our final product.
+</div>
+
 ## 6.References
 
 [1] Briere, Danny and Hurley, Pat. “The Essentials of Speakers.” Dummies. Dummies, n.d. Web. 22 November 2015. <http://www.dummies.com/how-to/content/the-essentials-of-speakers.html>
