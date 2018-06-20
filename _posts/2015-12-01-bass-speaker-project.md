@@ -35,7 +35,7 @@ To start our project, we first had to do some research on what makes a good spea
 [7] R would be the driver acoustic resistance, C would be the drivers acoustic compliance, and L would be the drivers acoustic mass. The enclosures acoustic impedance is also included in the calculation of the “voltage” source in the acoustic circuit (figure 1.2) is the pressure source that is created from the driver at certain frequencies. This “voltage” source will be treated as an AC(alternating current) source at the drivers resonant frequency. What needs to be calculated is the “current” of the circuit which would be the drivers cone velocity in this case[10]. Once this is calculated, you can then calculate the rest of the properties needed for the enclosure.   
 
 <div class="imgcap">
-<img src="/assets/bass/image2.jpgg">
+<img src="/assets/bass/image2.jpg">
 <img src="/assets/bass/image3.jpg">
 </div>
 
