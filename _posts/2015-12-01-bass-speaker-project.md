@@ -31,7 +31,7 @@ To start our project, we first had to do some research on what makes a good spea
 <div style="display:inline-block">
 <img src="/assets/bass/image5.jpg">
 </div>
-<div style="display:inline-block; margin-left: 20px;">
+<div style="display:inline-block">
 <img src="/assets/bass/image1.jpg">
 </div>
 
@@ -40,9 +40,7 @@ To start our project, we first had to do some research on what makes a good spea
 <div class="imgcap">
 <img src="/assets/bass/image2.jpg">
 </div>
-
-
-
+</br>
 <div class="imgcap">
 <img src="/assets/bass/image3.jpg">
 </div>
