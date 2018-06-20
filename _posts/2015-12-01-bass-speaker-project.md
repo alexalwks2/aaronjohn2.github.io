@@ -29,11 +29,6 @@ To start our project, we first had to do some research on what makes a good spea
 
 <div class="imgcap">
 <img src="/assets/bass/image5.jpg">
-</div>
-
-
-
-<div class="imgcap">
 <img src="/assets/bass/image1.jpg">
 </div>
 
