@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "Flower Recognition - Using Caffe Model on Swift"
+title:  "Flower Recognition - Implementing a Caffe Model on Swift"
 date:   2018-06-18 21:26:27
 categories: deep-learning, swift, CoreML-tools, python, Caffe-Model, CNN, MLModel, IOS, mobile, AI
 ---
