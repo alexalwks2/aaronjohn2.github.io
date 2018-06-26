@@ -25,5 +25,5 @@ These images could vary and have been taken at different angles and at different
 * Therefore if you train a machine learning model on it, it should be able to classify with relative accuracy as to what flower is in the image that you have taken. [Jimmie Goode](https://github.com/jimgoo/caffe-oxford102), used this dataset to train a Convolutional Neural Network(CNN). He used Caffe to classify the images in the Oxford 102 category flower dataset. 
 This Caffe model is what I used in my Swift project to build the Flower Recognition app.
 
-You can get my [Flower Recognition iOS app](//this is a comment.. leave app link in here, once it is published) in the App Store.
+You can get my [Flower Recognition iOS app work](https://github.com/aaronjohn2/FlowerRecog-master) on GitHub.
 It's pretty cool to see Caffe finally working on my iPhone to solve a real world problem. It even works without Internet connection, since the MLModel is pre-loaded onto the device and an API is not required.
