@@ -7,7 +7,7 @@ categories: deep-learning, swift, CoreML-tools, python, Caffe-Model, CNN, MLMode
 ---
 Brief Description of app:
 In this project we will have a tree of memories. This tree would store memory items, images and notes in augmented reality based on geo location.
-Imagine PokemonGO but memories posted in different locations by people with intention of being public. Hence, any person who crosses the coordinates where the memory was posted would be able to see this in AR.
+Imagine PokemonGO but memories posted in different locations by people with the intention of being public. Hence, any person who crosses the coordinates where the memory was posted would be able to see this in AR.
 In this project I converted a pre-trained Caffe Model into MLModel format which was later used in my Xcode project.
 The Caffe Model that I used had already been trained on thousands upon thousands of images.
 This pre-trained model was converted to a .MLModel so that it can be seen and used by my Swift files in order to build this flower recognition app.
