@@ -11,3 +11,5 @@ In this project we will have a post of reviews and ratings in Augmented Reality(
 * This app allows you to take a picture, video or leave notes in front of any business(booth/building) as long as one is connected to the internet.
 
 * The main concept will be to be able to view other peoples review posts in AR.
+
+**The next progress update is scheduled for 11/05/2018**
