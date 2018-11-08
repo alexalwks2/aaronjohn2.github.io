@@ -6,7 +6,7 @@ date:   2018-06-18 21:26:27
 categories: deep-learning, swift, CoreML-tools, python, Caffe-Model, CNN, MLModel, IOS, mobile, AI
 ---
 
-In this project I Made a Flower Recognition app by implementing a pre-trained Convolutional Neural Network to classify with relative accuracy as to what flower is in the image that you have taken.
+In this project I Made a Flower Recognition app by implementing a pre-trained Convolutional Neural Network to classify with relative accuracy as to what flower is in the image that one has taken.
 I converted a pre-trained Caffe Model into MLModel format which was later used in my Xcode project.
 The Caffe Model that I used had already been trained on thousands upon thousands of images. This pre-trained model was converted to a .MLModel so that it can be seen and used by my Swift files in order to build this flower recognition app.
 
