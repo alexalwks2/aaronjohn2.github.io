@@ -6,7 +6,7 @@ date:   2018-12-23 21:26:27
 categories: Kali, DHCP, hostapd, DNS, apache, wireshark
 ---
 
- Note: For this project I will presume that you have already cloned a captive portal of an open business network that you usually would see in airports, hotel lobbies, coffee shops, and other venues that offer free Wi-Fi hot spots. Also, I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
+ Note: for this project I will presume that you have already cloned a captive portal of an open business network that you usually would see in airports, hotel lobbies, coffee shops, and other venues that offer free Wi-Fi hot spots. Also, I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
 
 Below I have documented the process on how to manually create a fake Access Point (AP). However, in order to build a fake AP, one needs to understand the main components of a wifi network. These components are:
 
@@ -56,7 +56,7 @@ address=/#/10.0.0.1
 ```shell
 dnsmasq -C /root/Downloads/fake-ap/dnsmasq.conf
 ```
-(Note: make sure you change the below path to where you saved the dnsmasq.conf file)
+(Note: make sure you change the above path to where you saved the dnsmasq.conf file)
 
 5. Next, we will configure hostapd to start fake AP, in order to allow people to connect to it. Here, copy the below code and save it in a file called dnsmasq.conf
 ```shell
@@ -75,7 +75,7 @@ driver=nl80211
 ```shell
 hostapd /root/Downloads/fake-ap/hostapd.conf -B
 ```
-(Here, -B is used so that it will execute the above command in the background)
+(Here, -B is used so that it will execute the above command in the background. Also, make sure you change the above path to where you saved the hostapd.conf file)
 
 7. Next, we will configure wlan0 (or whatever interface that your running) to have an IP address of 10.0.0.1
 ```shell
