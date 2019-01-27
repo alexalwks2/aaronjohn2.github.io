@@ -87,3 +87,20 @@ ifconfig wlan0 10.0.0.1 netmask 255.255.255.0
 ```shell
 service apache2 start
 ```
+
+9. In this step, we will sniff and analyze login credentials that the user enters into the cloned captive portal. However, instead of waiting for client to connect to FakeAP we could use a deauthentication attack on the real captive portal network and lure clients into using the FakeAP. Hence, we will run the following deauthentication attack command in terminal.
+```shell
+aireplay-ng --deauth 100000 -a (mac address of AP) wlan0
+```
+Note: in order to find mac address of AP use airodump-ng as follows:
+    ```shell
+    airodump-ng --band a wlan0
+    ```
+    
+10. By continously sending thousand of deauth packets... it will prevent the user from reconnecting back to the portal. Hence, they will be lured into using our fake captive portal. Now, we can start to sniff the login info either by using Ettercap or MITMF, but for this example I will use Tshark. 
+```shell
+tshark -i wlan0 -w wifisniff.cap
+```
+(Note: -i wlan0 is the interface used to sniff data which will be our wireless card and -w wifisniff.cap will be where I store all the sniffed data)
+
+Once a client enters the credential, we can analyze the .cap file using Wireshark. Just simply type *wireshark* in terminal and filter out http and search for a POST request. Eventually you should find the clients credentials in the HTML form :)
