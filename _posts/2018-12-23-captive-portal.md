@@ -3,10 +3,10 @@ layout: post
 comments: true
 title:  "Building a Fake Access Point and Using a Captive Portal to Get Login Credentials"
 date:   2018-12-23 21:26:27
-categories: Kali, DHCP, hostapd, DNS, apache, wireshark,
+categories: Kali, DHCP, hostapd, DNS, apache, wireshark
 ---
 
-* Note: In this project I will presume that you have already cloned a captive portal of an open business network that you usually would see in airports, hotel lobbies, coffee shops, and other venues that offer free Wi-Fi hot spots. Also, I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
+ Note: In this project I will presume that you have already cloned a captive portal of an open business network that you usually would see in airports, hotel lobbies, coffee shops, and other venues that offer free Wi-Fi hot spots. Also, I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
 
 Below I have documented the process on how to manually create a fake Access Point (AP). However, in order to build a fake AP, one needs to understand the main components of a wifi network. These components are:
 
