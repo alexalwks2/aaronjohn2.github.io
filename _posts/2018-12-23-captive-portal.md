@@ -41,16 +41,12 @@ iptables -P FORWARD ACCEPT
 ```shell
 #Set the wifi interface
 interface=wlan0
-
 #Set the ip range that can be given to clients
 dhcp-range=10.0.0.10,10.0.0.100,8h
-
 #Set the gateway IP address
 dhcp-option=3,10.0.0.1
-
 #Set dns server address
 dhcp-option=6,10.0.0.1
-
 #Redirect all requests to 10.0.0.1
 address=/#/10.0.0.1
 ```
@@ -66,13 +62,10 @@ dnsmasq -C /root/Downloads/fake-ap/dnsmasq.conf
 ```shell
 #Set wifi interface
 interface=wlan0
-
 #Set network name
 ssid=FakeAP
-
 #Set channel
 channel=1
-
 #Set driver
 driver=nl80211
 ```
