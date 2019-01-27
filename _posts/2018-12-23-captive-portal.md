@@ -38,8 +38,7 @@ iptables -P FORWARD ACCEPT
 (By default there should not be any IP table rules, however to be on the safe side, if a program modifies and adds IP tables rules then the fake AP will fail, hence the following commands are a precaution.)
 
 3. Next, we will configure dnsmasq to be used as a DHCP server and DNS server. Here, copy the below code and save it in a file called dnsmasq.conf
-```
-
+```shell
 #Set the wifi interface
 interface=wlan0
 #Set the ip range that can be given to clients
@@ -50,7 +49,6 @@ dhcp-option=3,10.0.0.1
 dhcp-option=6,10.0.0.1
 #Redirect all requests to 10.0.0.1
 address=/#/10.0.0.1
-
 ```
 (The first line that says interface can be found by doing ifconfig and this interface is the one that you wireless adapter uses. The second line states that the range is from 10 to 100 and each ip can last for 8 hours. The third line states the IP of wlan0, usually the 1st IP is used for the the gateway/router and the same config is used for the fourth line. The fifth line states to redirect any request to router's IP)
 
@@ -61,8 +59,7 @@ dnsmasq -C /root/Downloads/fake-ap/dnsmasq.conf
 (Note: make sure you change the below path to where you saved the dnsmasq.conf file)
 
 5. Next, we will configure hostapd to start fake AP, in order to allow people to connect to it. Here, copy the below code and save it in a file called dnsmasq.conf
-```
-
+```shell
 #Set wifi interface
 interface=wlan0
 #Set network name
@@ -71,7 +68,6 @@ ssid=FakeAP
 channel=1
 #Set driver
 driver=nl80211
-
 ```
 (Note: when you set the network name, make sure it has the same name as the captive portal and you can feel free to add a version to it like "FakeAP V2")
 
