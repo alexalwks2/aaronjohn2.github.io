@@ -13,9 +13,9 @@ Below I have documented the process on how to manually create a fake Access Poin
 1. A wifi card (router) in order to broadcast the signal of an AP. (I will use hostapd tool to broadcast the signal)
 2. A DHCP server to give IP addresses to clients that connect to our AP. (I will use dnsmasq tool as DHCP server)
 3. A DNS server to handle DNS requests. (I will use dnsmasq tool as a DNS server)
-* PS: dnsmasq tool is rather convenient to use, since it can be used as a DHCP and DNS server at the same time!
+* dnsmasq tool is rather convenient to use, since it can be used as a DHCP and DNS server at the same time!
 
-* To install hostapd and dnsmasq, type the below command in terminal.  
+To install hostapd and dnsmasq, type the below command in terminal.  
 ```
 apt-get install hostapd dnsmasq
 ```
