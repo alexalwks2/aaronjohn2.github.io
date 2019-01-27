@@ -13,8 +13,9 @@ Below I have documented the process on how to manually create a fake Access Poin
 1. A wifi card (router) in order to broadcast the signal of an AP. (I will use hostapd tool to broadcast the signal)
 2. A DHCP server to give IP addresses to clients that connect to our AP. (I will use dnsmasq tool as DHCP server)
 3. A DNS server to handle DNS requests. (I will use dnsmasq tool as a DNS server)
-* PS: dnsmasq tool is rather convenient to use since it can be used as a DHCP and DNS server at the same time!
+* PS: dnsmasq tool is rather convenient to use, since it can be used as a DHCP and DNS server at the same time!
 
+* To install hostapd and dnsmasq, type the below command in terminal.  
 ```
 apt-get install hostapd dnsmasq
 ```
@@ -89,7 +90,7 @@ ifconfig wlan0 10.0.0.1 netmask 255.255.255.0
 ```
 (Note: change interface to the one you are using, in my case its wlan0. The reason we use 10.0.0.1 is because this is the ip address that is used by the dnsmasq.conf and all the requests is configured to go to this IP. Here, 255.255.255.0 address is the most common subnet mask used on computers connected to Internet Protocol (IPv4) networks)
 
-8. Start Web server
+8. Start Web server to launch the cloned captive portal. Hence, when the client clicks on the fake AP the captive portal web page is displayed.
 ```
 service apache2 start
 ```
