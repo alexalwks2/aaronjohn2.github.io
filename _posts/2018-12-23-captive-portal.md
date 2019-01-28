@@ -3,7 +3,7 @@ layout: post
 comments: true
 title:  "Building a Fake Access Point and Using a Captive Portal to Get Login Credentials"
 date:   2018-12-23 21:26:27
-categories: Kali, DHCP, hostapd, DNS, apache, wireshark
+categories: Kali, DHCP, hostapd, DNS, Apache, Wireshark, HTML, Web Server, Penetration Testing
 ---
 
  Note: for this project I will presume that you have already cloned a captive portal of an open business network that you usually would see in airports, hotel lobbies, coffee shops, and other venues that offer free Wi-Fi hot spots. Also, I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
@@ -136,7 +136,7 @@ leafpad /etc/apache2/sites-enabled/000-default.conf
 service apache2 restart
 ```
 
-4. After restarting web server and if you test out the FakeAP network, you will notice a web browser pop up. However, this browser will show a 404 error saying "Not Found". To fix this, we will configure the web server so that if a file is not found it will redirect the person to the home page, in our case it would be the cloned captive portal login page. So in terminal type the following command and feel free to use your preferred text editor:
+4. After restarting web server and if you test out the FakeAP network, you will notice a web browser pop up. However, this browser will show a 404 error saying "Not Found" (the reason why a 404 error is showed is because the url is altered by the the system OS.) To fix this, we will configure the web server so that if a file is not found it will redirect the person to the home page. In our case it would be to redirect a 404 error to the cloned captive portal login page. So in terminal type the following command and feel free to use your preferred text editor:
 ```shell
 leafpad /etc/apache2/sites-enabled/000-default.conf
 ```
