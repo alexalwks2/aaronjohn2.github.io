@@ -154,7 +154,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond ^(.*)$ / [L,QSA]
 ```
 
-7. Restart apache web server in terminal. Now, your page should pop up in a web browser when a client clicks on the FakeAP network.
+7. Restart apache web server in terminal. Now, your page should pop up in a web browser, when a client clicks on the FakeAP network.
 ```shell
 service apache2 restart
 ```    
