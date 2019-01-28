@@ -105,7 +105,7 @@ tshark -i wlan0 -w wifisniff.cap
 
 Once a client enters the credential, we can analyze the .cap file using Wireshark. Just simply type *wireshark* in terminal and filter out http and search for a POST request. Eventually you should find the clients credentials in the HTML form :)
 
-
+<br><br>
 **Update - Redirecting Requests to Captive Portal Login Page**
 
 When a client first connects to a captive portal the system will send requests to a specific server depending on the system whether it runs on mac OS, Linux or Windows. If the system gets a response it was expecting then it will think that this is a normal network and it wont do anything.
