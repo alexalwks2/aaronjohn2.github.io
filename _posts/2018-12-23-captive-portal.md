@@ -104,3 +104,56 @@ tshark -i wlan0 -w wifisniff.cap
 (Note: -i wlan0 is the interface used to sniff data which will be our wireless card and -w wifisniff.cap will be where I store all the sniffed data)
 
 Once a client enters the credential, we can analyze the .cap file using Wireshark. Just simply type *wireshark* in terminal and filter out http and search for a POST request. Eventually you should find the clients credentials in the HTML form :)
+
+**Update - Redirecting Requests to Captive Portal Login Page**
+
+When a client first connects to a captive portal the system will send requests to a specific server depending on the system whether it runs on mac OS, Linux or Windows. If the system gets a response it was expecting then it will think that this is a normal network and it wont do anything.
+    However, if the clients system does not get a response it was expecting, it will then think that the network is a captive portal and it will proceed to show the client the captive portal login page.
+
+**Solution for the above issue**
+
+1. Requests sent to www. websites have to be redirected to just the domain name (for example, google.com instead of www.google.com). Therefore, in order to achieve this we have to modify the apache configuration file.
+To open the configuration file type the following in terminal:
+```shell
+leafpad /etc/apache2/sites-enabled/000-default.conf
+```
+(Note: I am using leafpad text editor to open the configuration file... feel free to use another text editor.)
+
+2. In order to delete just the www part, we need to use rewrite rules to redirect www to just the domain name. In this case we will add a directory tag at the bottom of the configuration file.
+```HTML
+<Directory "/var/www/html">  <!-- /var/www/html is the location of where my website is stored-->
+    RewriteEngine On         <!--enables rewrite engine-->
+    RewriteBase /            <!--rewrite base is in web root-->
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [nc]   <!--rewrite condition works based on Regex-->
+    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+</Directory>
+```
+(Note: paste the above code, save and close text editor)
+
+3. Restart apache web server in terminal.
+```shell
+service apache2 restart
+```
+
+4. After restarting web server and if you test out the FakeAP network, you will notice a web browser pop up. However, this browser will show a 404 error saying "Not Found". To fix this, we will configure the web server so that if a file is not found it will redirect the person to the home page, in our case it would be the cloned captive portal login page. So in terminal type the following command and feel free to use your preferred text editor:
+```shell
+leafpad /etc/apache2/sites-enabled/000-default.conf
+```
+
+5. On the top of the configuration file type in the following:
+```HTML
+ErrorDocument 404 /
+```
+(Note: Here / is used to redirect to web root) Don't close the text editor just yet... see next step!
+
+6. Also, just to be on the safe side at the bottom of the configuration file inside the <Directory> tag we will put the following rewrite rules. This step is the same as the above step but it is used to make sure that it works with any smart phone.
+```HTML
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond ^(.*)$ / [L,QSA]
+```
+
+7. Restart apache web server in terminal. Now, your page should pop up in a web browser when a client clicks on the FakeAP network.
+```shell
+service apache2 restart
+```    
