@@ -105,6 +105,7 @@ tshark -i wlan0 -w wifisniff.cap
 
 Once a client enters the credential, we can analyze the .cap file using Wireshark. Just simply type *wireshark* in terminal and filter out http and search for a POST request. Eventually you should find the clients credentials in the HTML form :)
 
+
 **Update - Redirecting Requests to Captive Portal Login Page**
 
 When a client first connects to a captive portal the system will send requests to a specific server depending on the system whether it runs on mac OS, Linux or Windows. If the system gets a response it was expecting then it will think that this is a normal network and it wont do anything.
@@ -122,10 +123,10 @@ leafpad /etc/apache2/sites-enabled/000-default.conf
 2. In order to delete just the www part, we need to use rewrite rules to redirect www to just the domain name. In this case we will add a directory tag at the bottom of the configuration file.
 ```shell
 <Directory "/var/www/html">  <!-- /var/www/html is the location of where my website is stored-->
-    RewriteEngine On         <!--enables rewrite engine-->
-    RewriteBase /            <!--rewrite base is in web root-->
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [nc]   <!--rewrite condition works based on Regex-->
-    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteEngine On         <!--enables rewrite engine-->
+RewriteBase /            <!--rewrite base is in web root-->
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [nc]   <!--rewrite condition works based on Regex-->
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 </Directory>
 ```
 (Note: paste the above code, save and close text editor)
