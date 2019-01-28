@@ -120,17 +120,16 @@ leafpad /etc/apache2/sites-enabled/000-default.conf
 ```
 (Note: I am using leafpad text editor to open the configuration file... feel free to use another text editor.)
 
-2. In order to delete just the www part, we need to use rewrite rules to redirect www to just the domain name. In this case we will add a directory tag at the bottom of the configuration file. (Note: paste the below code, save and close text editor)
-```
-```
-```html
-<Directory "/var/www/html">  <!-- /var/www/html is the location of where my website is stored-->
-    RewriteEngine On         <!--enables rewrite engine-->
-    RewriteBase /            <!--rewrite base is in web root-->
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]   <!--rewrite condition works based on Regex-->
-    RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-</Directory>
-```
+2. In order to delete just the www part, we need to use rewrite rules to redirect www to just the domain name. In this case we will add a directory tag at the bottom of the configuration file.
+    ```shell
+    <Directory "/var/www/html">  <!-- /var/www/html is the location of where my website is stored-->
+        RewriteEngine On         <!--enables rewrite engine-->
+        RewriteBase /            <!--rewrite base is in web root-->
+        RewriteCond %{HTTP_HOST} ^www\.(.*)$ [nc]   <!--rewrite condition works based on Regex-->
+        RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+    </Directory>
+    ```
+(Note: paste the above code, save and close text editor)
 
 3. Restart apache web server in terminal.
 ```shell
