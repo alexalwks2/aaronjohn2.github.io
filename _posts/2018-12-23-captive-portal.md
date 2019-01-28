@@ -121,7 +121,7 @@ leafpad /etc/apache2/sites-enabled/000-default.conf
 (Note: I am using leafpad text editor to open the configuration file... feel free to use another text editor.)
 
 2. In order to delete just the www part, we need to use rewrite rules to redirect www to just the domain name. In this case we will add a directory tag at the bottom of the configuration file.
-```shell
+```html
 <Directory "/var/www/html">  <!-- /var/www/html is the location of where my website is stored-->
 RewriteEngine On         <!--enables rewrite engine-->
 RewriteBase /            <!--rewrite base is in web root-->
@@ -142,13 +142,13 @@ leafpad /etc/apache2/sites-enabled/000-default.conf
 ```
 
 5. On the top of the configuration file type in the following:
-```HTML
+```html
 ErrorDocument 404 /
 ```
 (Note: Here / is used to redirect to web root) Don't close the text editor just yet... see next step!
 
 6. Also, just to be on the safe side at the bottom of the configuration file inside the <Directory> tag we will put the following rewrite rules. This step is the same as the above step but it is used to make sure that it works with any smart phone.
-```HTML
+```html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond ^(.*)$ / [L,QSA]
