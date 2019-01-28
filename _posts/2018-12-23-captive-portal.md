@@ -129,7 +129,6 @@ leafpad /etc/apache2/sites-enabled/000-default.conf
     RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 </Directory>
 ```
-
 (Note: paste the above code, save and close text editor)
 
 3. Restart apache web server in terminal.
