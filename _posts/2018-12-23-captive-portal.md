@@ -83,7 +83,7 @@ hostapd /root/Downloads/fake-ap/hostapd.conf -B
 ```shell
 ifconfig wlan0 10.0.0.1 netmask 255.255.255.0
 ```
-(Note: change interface to the one you are using, in my case its wlan0. The reason we use 10.0.0.1 is because this is the ip address that is used by the dnsmasq.conf and all the requests is configured to go to this IP. Here, 255.255.255.0 address is the most common subnet mask used on computers connected to Internet Protocol (IPv4) networks)
+(Note: change interface to the one you are using, in my case its wlan0. The reason we use 10.0.0.1 is because this is the ip address that is used by the dnsmasq.conf and all the requests is configured to go to this IP. Here, 255.255.255.0 address is the most common subnet mask used on computers connected to Internet Protocol (IPv4) networks. In our case the format would be 10.0.0.xxx where xxx will be the only part that would vary for every IP address in that network. Likewise if the subnet mask is 255.255.0.0 then the computer would assume that every IP address in that netwrok would be in the format of 10.0.xxx.xxx.)
 
 8. Start Web server to launch the cloned captive portal. Hence, when the client clicks on the fake AP the captive portal web page is displayed.
 ```shell
