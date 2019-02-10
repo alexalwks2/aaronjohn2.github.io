@@ -75,7 +75,7 @@ Note: here the host is the IP address or domain name of where my web server is h
 7. So now when client clicks on a PDF file to be downloaded, that download request will be redirected to our fake file. This fake will is what will be downloaded to the clients machine.
 
 **Generating Trojans Using TrojanFactory**
-1. We will use the [TrojanFactory](https://github.com/z00z/TrojanFactory) application from GitHub to create a trojan and since it uses AutoIt, we will first install [AutoIt from the main web page](https://www.autoitscript.com/site/autoit/downloads/). The AutoIt download comes as a Windows .exe file, hence we will use the Wine tool to run the .exe on Linux terminal as shown below.
+1. We will use the [TrojanFactory](https://github.com/z00z/TrojanFactory) application from GitHub to create a trojan and since it uses AutoIt, we will first install . The AutoIt download comes as a Windows .exe file, hence we will use the Wine tool to run the .exe on Linux terminal as shown below.
 ```shell
 wine autoit-v3-setup.exe
 ```
