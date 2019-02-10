@@ -8,7 +8,7 @@ categories: Kali, Python, MITMproxy, Web Server, Penetration Testing, Ettercap, 
 
 For this project we will analyze the flow of data and write our own script to intercept downloaded files and make a trojan out of the file that the target client is downloading.
 
-Here, we are not replacing the file but we are actually giving the target client the file that they requested. However, the requested file will be modified slightly so that when it is executed it will show the target client the file that they expected, while also running our evil file in the background.
+Here, we are not replacing the file but we are actually giving the target client the file that they requested. However, the requested file will be modified slightly so that when it is executed it will show the target client the file that they expected, while also running our evil file (trojan) in the background. We will write a MITMproxy script to accomplish this file modification.
 
 The following documentation is based on a post connection attack. Meaning, after connecting to a network the below method can be used to become the MITM (Man In The Middle) between the gateway and the client. I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
 
@@ -99,9 +99,6 @@ python trojan_factory.py -f https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf -e http
 Note: here -f to specify the location of normal file, -e is to specify the location of evil file, -o is the location to store the result, -i is the location of the Trojan icon that is to be used, here I am using a PDF icon since the target download extension is a PDF. and -z to zip the file. Type in "python trojan_factory.py --help" for more info.
 
 *Executing Bash Commands and Calling TrojanFactory From Our Script.*
-In this project I will document the process on how to replace files the user downloads, with a trojan (that will run the file they expect including our evil file).
-We will write a MITMproxy script, so that when a client downloads something, that file will be modified in a way that we have a trojan running in the background of that file. In order to follow through with this documentation make sure to clone [TrojanFactory](https://github.com/z00z/TrojanFactory) application from GitHub, since this will be called in our MITMproxy script.
-
 1. We will write the following code in the proxyscript.py file using any text editor. In this script, we will call TrojanFactory (execute a bash command in the py script) to generate a trojan and then we will serve that trojan with the expected response to the client. In the below script we are intercepting PDF file. Feel free to intercept any file(.jpg, .exe, etc.) you want by changing the endswith extension. If you do change the extension, make sure to change the -i file to specify an icon that corresponds to the front_file extension.
 ```python
 import mitmproxy
