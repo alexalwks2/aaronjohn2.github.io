@@ -35,7 +35,7 @@ Note: In the above script the parameter flow is a container that contains/stores
 ```
 Note: In the above command -s is the option to specify the location of our written script to handle flows.
 
-3. So we will intercept the request and create our own response while ARP poisoning one way. We will code the request method in a way that will be able to differentiate the request flow which contains the downloaded file from all the other request flows. Hence, we can avoid creating responses for each request flow and only create a specific response to the flow which contains the downloaded file. In order to this, we will modify our code to make it print only the URL which contains the .pdf extension since we are targeting pdf download request files.
+4. So we will intercept the request and create our own response while ARP poisoning one way. We will code the request method in a way that will be able to differentiate the request flow which contains the downloaded file from all the other request flows. Hence, we can avoid creating responses for each request flow and only create a specific response to the flow which contains the downloaded file. In order to this, we will modify our code to make it print only the URL which contains the .pdf extension since we are targeting pdf download request files.
 ```python
 import mitmproxy
 
@@ -47,7 +47,7 @@ def request(flow):
 ```
 Note: here we print out the pretty_url of the request property of the flow object. The pretty_url will filter out all the request URL's and since we are tageting .pdf files, we can include a conditional if statement as shown above. If client downloads a .pdf file, the print statement should get executed on your terminal in grey colored text.
 
-4. Next, we will generate custom HTTP responses. Our goal is to generate our own response so whenever the target client sends a request that ends with a .pdf we want to be able to generate a response that will get the client to download a fake file. Here, we can serve the client a trojan, a backdoor or rather any file that you want. We will use a method from MITMproxy library to accomplish this.
+5. Next, we will generate custom HTTP responses. Our goal is to generate our own response so whenever the target client sends a request that ends with a .pdf we want to be able to generate a response that will get the client to download a fake file. Here, we can serve the client a trojan, a backdoor or rather any file that you want. We will use a method from MITMproxy library to accomplish this.
 ```python
 import mitmproxy
 
@@ -59,7 +59,7 @@ def request(flow):
 ```
 Note: the make method takes 3 arguments, the first argument is http status code, second is content, and third is headers. Here, we use status code 301 which is "moved permanently", refer this [link](https://en.wikipedia.org/wiki/HTTP_301) for more info. I set the header name to the location of the fake file. Here, in order to replace the target file response with the fake file response, I provide a direct URL to the fake file and it is stored in my own web server. If you notice we did not modify the second parameter (content) because we are redirecting the user to a different location.
 
-5. Next, we will add another additional condition to the if statement to prevent the code from going into a infinite loop due to the .pdf extension. Since our fake file ends with .pdf as well. so replace the if statement as shown below.
+6. Next, we will add another additional condition to the if statement to prevent the code from going into a infinite loop due to the .pdf extension. Since our fake file ends with .pdf as well. so replace the if statement as shown below.
 ```python
 import mitmproxy
 
@@ -71,7 +71,7 @@ def request(flow):
 ```
 Note: here the host is the IP address or domain name of where my web server is hosted.
 
-6. So now when client clicks on a PDF file to be downloaded, that download request will be redirected to our fake file. This fake will is what will be downloaded to the clients machine.
+7. So now when client clicks on a PDF file to be downloaded, that download request will be redirected to our fake file. This fake will is what will be downloaded to the clients machine.
 
 *Generating Trojans Using TrojanFactory*
 1. We will use the [TrojanFactory](https://github.com/z00z/TrojanFactory) application from GitHub to create a trojan and since it uses AutoIt, we will first install [AutoIt from the main web page](https://www.autoitscript.com/site/autoit/downloads/). The AutoIt download comes as a Windows .exe file, hence we will use the Wine tool to run the .exe on Linux terminal as shown below.
