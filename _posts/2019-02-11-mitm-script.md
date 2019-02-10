@@ -29,7 +29,7 @@ def response(flow):
 ```
 Note: In the above script the parameter flow is a container that contains/stores all the requests that are being sent from the target and that same parameter is used to contain/store all the responses that are being sent to the target.
 
-2. We will run MITMproxy and tell it to use our python script to handle the flows. So first we will go to our MITM proxy directory in terminal and run mitmdump as shown below.
+3. We will run MITMproxy and tell it to use our python script to handle the flows. So first we will go to our MITM proxy directory in terminal and run mitmdump as shown below.
 ```shell
 ./mitmdump -s /root/proxyscript.py
 ```
