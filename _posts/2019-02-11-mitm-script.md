@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title:  "How to Write Man In The Middle Scripts Using Python and MITMproxy"
+title:  "How to Write MITM Scripts Using Python and MITMproxy"
 date:   2019-02-11 19:13:29
 categories: Kali, Python, MITMproxy, Web Server, Penetration Testing, Ettercap, TrojanFactory
 ---
@@ -10,7 +10,7 @@ For this project we will analyze the flow of data and write our own script to in
 
 Here, we are not replacing the file but we are actually giving the target client the file that they requested. However, the requested file will be modified slightly so that when it is executed it will show the target client the file that they expected, while also running our evil file in the background.
 
-The following documentation is based on a post connection attack. Meaning, after connecting to a network the below method can be used to become the Man In The Middle between the gateway and the client. I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
+The following documentation is based on a post connection attack. Meaning, after connecting to a network the below method can be used to become the MITM (Man In The Middle) between the gateway and the client. I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
 
 *Writing Python Script To Execute On A Remote Computer*
 1. In this documentation I will go through the process of writing scripts in python. These scripts will be used with MITMproxy to be executed on a remote computer. MITMproxy has a scripting API, where python code can be used to interact with MITMproxy. First, we will start off by creating a new python file in the root directory called proxyscript.py
