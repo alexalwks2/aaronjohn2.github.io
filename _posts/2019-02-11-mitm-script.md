@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "How to Write MITM Scripts Using Python and MITMproxy"
-date:   2019-02-11 19:13:29
+date:   2019-02-12 19:13:29
 categories: Kali, Python, MITMproxy, Web Server, Penetration Testing, Ettercap, TrojanFactory
 ---
 
