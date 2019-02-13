@@ -8,7 +8,7 @@ categories: Kali, Python, MITMproxy, Web Server, Penetration Testing, Ettercap, 
 
 For this project we will analyze the flow of data and write our own script to intercept downloaded files and make a trojan out of the file that the target client is downloading.
 
-Here, we are not replacing the file but we are actually giving the target client the file that they requested. However, the requested file will be modified slightly so that when it is executed it will show the target client the file that they expected, while also running our evil file (trojan) in the background. We will write a MITMproxy script to accomplish this file modification.
+Here, we are not replacing the file but we are actually giving the target client the file that they requested. However, the requested file will be modified slightly so that when it is executed it will show the target client the file that they expected, while also running our evil file (trojan) in the background. We will write a MITMproxy script to accomplish this file modification. ([Clicke here to read more on MITMproxy.](https://docs.mitmproxy.org/stable/))
 
 The following documentation is based on a post connection attack. Meaning, after connecting to a network the below method can be used to become the MITM (Man In The Middle) between the gateway and the client. I will presume you have a wireless adapter that supports monitor mode and packet injection with Kali Linux installed (or other penetration testing OS installed). Yayy! Now let's move on to the main course of this documentation.
 
