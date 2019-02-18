@@ -27,7 +27,13 @@ To represent the style of an input image, a feature space designed to capture te
 
 So, the similarities and differences between features in a layer should give us some information about the texture and color found in an image. But at the same time, it should leave out information about the actual arrangement and identity of different objects in that image. This shows that content and style can be separate components of an image. Lets look at this in a complete style transfer example.
 
-Style transfer will look at two different images, we often call these the style image and the content image. Using a trained CNN, style transfer finds the style of one image and the content of the other. Finally, it tries to merge the two to create a new third image. In this newly created image, the objects and their arrangement are taken from the content image, and the colors and textures are taken from the style image. Here's an example of an [image of a dog, the content image, being combined with an image of a blue painting.](https://news.developer.nvidia.com/wp-content/uploads/2018/08/Linear-Style-Transfer-featured.png) Effectively, style transfer creates a new image that keeps the dog content, but renders it with the colors, the print texture, and the style of the blue painting. This is the theory behind how style transfer works.
+Style transfer will look at two different images, we often call these the style image and the content image. Using a trained CNN, style transfer finds the style of one image and the content of the other. Finally, it tries to merge the two to create a new third image. In this newly created image, the objects and their arrangement are taken from the content image, and the colors and textures are taken from the style image. Here's an example of an image of a dog, the content image, being combined with an image of a blue painting.
+
+<div class="imgcap">
+<img src="/assets/bass/dog_transfer.png">
+</div>
+
+Effectively, style transfer creates a new image that keeps the dog content, but renders it with the colors, the print texture, and the style of the blue painting. This is the theory behind how style transfer works.
 
 **How to Extract Features From Different Layers of a Trained Model**
 
@@ -70,7 +76,13 @@ The style weights are values that will give more or less weight to the calculate
 
 We have values for the content and style loss, but since they are calculated differently, these values will be pretty different, and we want our target image to take both into account fairly equally. So, it's necessary to apply constant weigts, alpha and beta, to content and style losses respectively. Such that the total loss reflects in equal balance. In practice, this means multiplying the style loss by a much larger weight value than the content loss.
 
-You'll often see this expressed as a ratio of the content and style weights, alpha over beta. In the paper [Image Style Transfer Using Convolutional Neural Networks, by Gatys](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) we see the effects of a bigger or smaller ratio. Here, is an [example](https://news.developer.nvidia.com/wp-content/uploads/2018/08/Linear-Style-Transfer-featured.png) of a content and style image. We can imagine that the content (dog) weight alpha is one, and that the style (blue painting) weight beta is 10. You can see that the target image is mostly content without much style as shown in the [example](https://news.developer.nvidia.com/wp-content/uploads/2018/08/Linear-Style-Transfer-featured.png). However, say if beta increases to 100 and alpha stays at 1 then we will be able to see more style in the generated image.
+You'll often see this expressed as a ratio of the content and style weights, alpha over beta. In the paper [Image Style Transfer Using Convolutional Neural Networks, by Gatys](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) we see the effects of a bigger or smaller ratio. Here, is an example of a content and style image. 
+
+<div class="imgcap">
+<img src="/assets/bass/dog_transfer.png">
+</div>
+
+We can imagine that the content (dog) weight alpha is one, and that the style (blue painting) weight beta is 10. You can see that the target image is mostly content without much style as shown in the example. However, say if beta increases to 100 and alpha stays at 1 then we will be able to see more style in the generated image.
 
 If beta is increased to 10^-4 this can be way to much, since most of the content is gone. Hence, the smaller the alpha-beta ratio, the more stylistic effect you will see. This makes intuitive sense because the smaller a ratio corresponds to a larger value for beta, the style weight. You may find that certain ratios work well for one image, but not another. These weights will be good values to change to get the exact kind of stylized effect that you want. Now that we know the theory and math behind using a pre-trained CNN to separate the content and style of an image, next we will see how to implement style transfer in PyTorch.
 
@@ -78,7 +90,7 @@ If beta is increased to 10^-4 this can be way to much, since most of the content
 
 Here, we will go over an implementation of style transfer following the deatils outlined in the paper, [Image Style Transfer Using Convolutional Neural Networks.](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) We're going to use a pre-trained VGG 19 net as a feature extractor. We can put individual images through this network, then at specific layers get the output, and calculate the content and style representations for an image. Basically, style transfer aims to create a new target image that tries to match the content of a given image and the style of a given style image.
 
-1. Here's my [example](https://news.developer.nvidia.com/wp-content/uploads/2018/08/Linear-Style-Transfer-featured.png) of a dog and a blue painting form the target style image. With the code shown below, you'll be able to upload images of your own and really customize your own target style image. First, we will go ahead and load in our libraries.
+1. With the code shown below, you'll be able to upload images of your own and really customize your own target style image. First, we will go ahead and load in our libraries.
     ```python
     # import resources
     %matplotlib inline
