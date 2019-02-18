@@ -69,7 +69,7 @@ If beta is increased to 10^-4 this can be way to much, since most of the content
 
 Here, we will go over an implementation of style transfer following the deatils outlined in the paper, [Image Style Transfer Using Convolutional Neural Networks.](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) We're going to use a pre-trained VGG 19 net as a feature extractor. We can put individual images through this network, then at specific layers get the output, and calculate the content and style representations for an image. Basically, style transfer aims to create a new target image that tries to match the content of a given image and the style of a given style image.
 
-1. Here's our [example](https://news.developer.nvidia.com/wp-content/uploads/2018/08/Linear-Style-Transfer-featured.png) of a dog and a blue painting form the target style image. With the code shown below, you'll be able to upload images of your own and really customize your own target style image. First, we will go ahead and load in our libraries.
+1. Here's my [example](https://news.developer.nvidia.com/wp-content/uploads/2018/08/Linear-Style-Transfer-featured.png) of a dog and a blue painting form the target style image. With the code shown below, you'll be able to upload images of your own and really customize your own target style image. First, we will go ahead and load in our libraries.
     ```python
     # import resources
     %matplotlib inline
