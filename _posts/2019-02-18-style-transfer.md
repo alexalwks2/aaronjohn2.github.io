@@ -12,7 +12,7 @@ In this documentation I will discuss the steps to take in implementing the style
 
     <div class="imgcap">
     <img src="/assets/bass/memory.jpg" height="300" width="500">
-    <img src="/assets/bass/rowing_style_change.png" height="300" width="500">
+    <img src="/assets/bass/rowing_style_change.png">
     </div>
     
 The key to this technique is using a trained CNN to separate the content from the style of an image. If you can do this, then you can merge the content of one image, with the style of another and create something entirely different.
