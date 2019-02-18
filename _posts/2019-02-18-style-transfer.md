@@ -9,7 +9,7 @@ categories: CNN, Convolutional Neural Network, style transfer, PyTorch, VGG 19
 CNN's (Convolutional Neural Networks) are some of the most powerful networks for image classification and analysis. CNN's process visual information in a feedforward manner; passing a input image through a collection of image filters, which extract certain features from the input image. It turns out that these feature level representations are not only useful for classification, but for image construction as well. These representations are the basis for applications like style transfer and [deep dream,](https://deepdreamgenerator.com/) which compose images based on CNN layer activations and extracted features.
 
 In this documentation I will discuss the steps to take in implementing the style transfer algorithm. Style transfer allows you to apply the style of one image to another image of your choice. For example, here I have chosen a Salvador Dali painting for my style image and I chose a rowing picture of myself for my Content image in order to produce this final style transfer image as shown below.
-    <div class="imgcap" style="text-align:center;">
+    <div class="imgcap" style="center">
     <img src="/assets/bass/memory.jpg" height="400" width="600">
     <img src="/assets/bass/rowing_style_change.png">
     </div>
