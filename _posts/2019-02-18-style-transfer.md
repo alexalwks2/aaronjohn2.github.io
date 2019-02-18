@@ -8,8 +8,12 @@ categories: CNN, Convolutional Neural Network, style transfer, PyTorch, VGG 19
 
 CNN's (Convolutional Neural Networks) are some of the most powerful networks for image classification and analysis. CNN's process visual information in a feedforward manner; passing a input image through a collection of image filters, which extract certain features from the input image. It turns out that these feature level representations are not only useful for classification, but for image construction as well. These representations are the basis for applications like style transfer and [deep dream,](https://deepdreamgenerator.com/) which compose images based on CNN layer activations and extracted features.
 
-In this documentation I will discuss the steps to take in implementing the style transfer algorithm. Style transfer allows you to apply the style of one image to another image of your choice. For example, here I have applied this Salvador painting to a pic of me rowing in order to produce this final style transfer image.
-
+In this documentation I will discuss the steps to take in implementing the style transfer algorithm. Style transfer allows you to apply the style of one image to another image of your choice. For example, here I have applied a style transfer of the below Salvador painting to a pic of me rowing in order to produce this final style transfer image.
+    <div class="imgcap">
+    <img src="/assets/bass/memory.jpg">
+    <img src="/assets/bass/rowing_style_change.png">
+    </div>
+    
 The key to this technique is using a trained CNN to separate the content from the style of an image. If you can do this, then you can merge the content of one image, with the style of another and create something entirely different.
 
 **How Style and Content Can Be Separated**
@@ -296,8 +300,7 @@ Here, we will go over an implementation of style transfer following the deatils 
     ax2.imshow(im_convert(target))
     ```
     <div class="imgcap">
-    <img src="/assets/bass/rowing.jpg">
-    <img src="/assets/bass/memory.jpg">
+    <img src="/assets/bass/rowing_style_change.png">
     </div>
 
 13. Now, go create your style transfer image using this CNN :)
