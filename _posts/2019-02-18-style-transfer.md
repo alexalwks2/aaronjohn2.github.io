@@ -320,8 +320,6 @@ Here, we will go over an implementation of style transfer following the deatils 
     <img src="/assets/bass/rowing_style_change.png">
     </div>
 
-13. Now, go create your style transfer image using this CNN :)
-
 **References**
 * Paper on Image Style Transfer Using Convolutional Neural Networks, by Gatys — https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf
 * Stanford CNN for Visual Recognition — http://cs231n.github.io/convolutional-networks/#overview
