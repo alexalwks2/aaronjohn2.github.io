@@ -7,6 +7,7 @@ categories: CNN, Convolutional Neural Network, style transfer, PyTorch, VGG 19
 ---
 
 In this documentation I will discuss the steps to take in implementing the style transfer algorithm. Style transfer allows you to apply the style of one image to another image of your choice. For example, here I have chosen a Salvador Dali painting for my style image, and I chose a rowing picture of myself for my Content image in order to produce this final style transfer image as shown below.
+
 <div class="imgcap">
 <img src="/assets/bass/memory.jpg" height="300" width="500">
 <img src="/assets/bass/rowing_style_change.png" height="300">
