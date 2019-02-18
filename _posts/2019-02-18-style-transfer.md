@@ -11,7 +11,7 @@ CNN's (Convolutional Neural Networks) are some of the most powerful networks for
 In this documentation I will discuss the steps to take in implementing the style transfer algorithm. Style transfer allows you to apply the style of one image to another image of your choice. For example, here I have chosen a Salvador Dali painting for my style image and I chose a rowing picture of myself for my Content image in order to produce this final style transfer image as shown below.
 <div class="imgcap">
 <img src="/assets/bass/memory.jpg" height="300" width="500">
-<img src="/assets/bass/rowing_style_change.png">
+<img src="/assets/bass/rowing_style_change.png" height="400">
 </div>
     
 The key to this technique is using a trained CNN to separate the content from the style of an image. If you can do this, then you can merge the content of one image, with the style of another and create something entirely different.
