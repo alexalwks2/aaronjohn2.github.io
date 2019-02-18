@@ -10,6 +10,13 @@
     position: relative;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .site-title {
     font-size: 26px;
     font-weight: 300;
