@@ -62,7 +62,7 @@ To calculate the style loss between a target and style image, we find the mean s
 ```shell
 Style Loss = a(sigma(w)(Tl - Sl)^2
 ```
-(Here sigma runs from i to some value)
+(Note - here, sigma runs from i to some value)
 
 The style weights are values that will give more or less weight to the calculated style loss at each of the five layers, thereby changing how much effect each layer style representation will have on our final target image. Again, we'll only be changing the Target image's style representations as we minimize this loss over some number of iterations. So, now we have the content loss, which tells us how close the content of our target image is to that of our content image and the style loss, which tells us how close our target is in style to our style image. We can now add these losses together to get the total loss, and then use typical back propagation and optimization to reduce this loss by iteratively changing the target image to match our desired content and style.
 
