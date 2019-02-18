@@ -6,15 +6,15 @@ date:  2019-02-18 10:14:41
 categories: CNN, Convolutional Neural Network, style transfer, PyTorch, VGG 19
 ---
 
-CNN's (Convolutional Neural Networks) are some of the most powerful networks for image classification and analysis. CNN's process visual information in a feedforward manner; passing a input image through a collection of image filters, which extract certain features from the input image. It turns out that these feature level representations are not only useful for classification, but for image construction as well. These representations are the basis for applications like style transfer and [deep dream,](https://deepdreamgenerator.com/) which compose images based on CNN layer activations and extracted features.
-
 In this documentation I will discuss the steps to take in implementing the style transfer algorithm. Style transfer allows you to apply the style of one image to another image of your choice. For example, here I have chosen a Salvador Dali painting for my style image, and I chose a rowing picture of myself for my Content image in order to produce this final style transfer image as shown below.
 <div class="imgcap">
 <img src="/assets/bass/memory.jpg" height="300" width="500">
 <img src="/assets/bass/rowing_style_change.png" height="300">
 </div>
-    
-The key to this technique is using a trained CNN to separate the content from the style of an image. If you can do this, then you can merge the content of one image, with the style of another and create something entirely different.
+
+The key to this technique is using a trained CNN (Convolutional Neural Networks) to separate the content from the style of an image. If you can do this, then you can merge the content of one image, with the style of another and create something entirely different.
+
+CNN's are some of the most powerful networks for image classification and analysis. CNN's process visual information in a feedforward manner; passing a input image through a collection of image filters, which extract certain features from the input image. It turns out that these feature level representations are not only useful for classification, but for image construction which could be used for applications like style transfer and deep dream, etc. which is based on CNN layer activations and extracted features.
 
 **How Style and Content Can Be Separated**
 
@@ -76,7 +76,7 @@ The style weights are values that will give more or less weight to the calculate
 
 We have values for the content and style loss, but since they are calculated differently, these values will be pretty different, and we want our target image to take both into account fairly equally. So, it's necessary to apply constant weigts, alpha and beta, to content and style losses respectively. Such that the total loss reflects in equal balance. In practice, this means multiplying the style loss by a much larger weight value than the content loss.
 
-You'll often see this expressed as a ratio of the content and style weights, alpha over beta. In the paper [Image Style Transfer Using Convolutional Neural Networks, by Gatys](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) we see the effects of a bigger or smaller ratio. Here, is an example of a content and style image. 
+You'll often see this expressed as a ratio of the content and style weights, alpha over beta. In the paper [Image Style Transfer Using Convolutional Neural Networks, by Gatys](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Gatys_Image_Style_Transfer_CVPR_2016_paper.pdf) we see the effects of a bigger or smaller ratio. Here, is an example of a content and style image.
 
 <div class="imgcap">
 <img src="/assets/bass/dog_transfer.png">
