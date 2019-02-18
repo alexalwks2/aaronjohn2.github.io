@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "Performing Style Transfer Using a Convolutional Neural Network"
-date:  2019-02-18 10:14:41
+date:  2019-02-24 10:14:41
 categories: CNN, Convolutional Neural Network, style transfer, PyTorch, VGG 19
 ---
 
