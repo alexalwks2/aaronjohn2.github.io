@@ -36,7 +36,9 @@ Here we will extract features from different layers of a trained model and use t
 In the paper, the content representation for an image is taken as the output from the fourth convolutional stack, conv4_2. As we form our new target image, we'll compare it's content representation with that of our content image. These 2 representations should be close to the same even as our target image changes it's style. To formalize this comparison, we'll define a content loss, a loss that calculates the difference between the content and target image representations, which I'll call Cr and Tr respectively. In this case, we calculate the mean squared difference between the two representations.
 
 The content loss measures how far away these two representations are from one another.
+```shell
 Content loss = 1/2(sigma(Tr - Cr)^2)
+```
 
 As we try to create the best target image, are aim will be to minimize this loss. This is similar to how we used loss and optimization to determine the weights of a CNN during training. But this time are aim is not to minimize classification error. In fact, we're not training the CNN at all. Rather our goal is to change only the target image, updating its appearance until it's content representation matches that of our content image. So, we're not using the VGG 19 network in a traditional sense, we're not training it to produce a specific output. But we are using it as a feature extractor, and using back propagation to minimize a defined loss function between our target and content images. In fact, we'll have to define a loss function between our target and style images, in order to produce an image with our desired style.
 
@@ -56,8 +58,11 @@ I should note that the Gram Matrix is just one mathematical way of representing 
 
 **Calculating a Style Loss** *(that Compares the Style of Our Target Image and Our Style Image)*
 
-To calculate the style loss between a target and style image, we find the mean squared distance between the style and target image Gram Matrices, all five pairs that are computed at each layer in our predefined list, conv1_1 up to conv5_1. These lists I'll call "Sl" and "Tl", where 'a' is a constant that accounts for the number of values in each layer. We'll multiply these five calculated distances by some style weights W that we specify, and then add them up. (where sigma runs from i to some value)
+To calculate the style loss between a target and style image, we find the mean squared distance between the style and target image Gram Matrices, all five pairs that are computed at each layer in our predefined list, conv1_1 up to conv5_1. These lists I'll call "Sl" and "Tl", where 'a' is a constant that accounts for the number of values in each layer. We'll multiply these five calculated distances by some style weights W that we specify, and then add them up.
+```shell
 Style Loss = a(sigma(w)(Tl - Sl)^2
+```
+(Here sigma runs from i to some value)
 
 The style weights are values that will give more or less weight to the calculated style loss at each of the five layers, thereby changing how much effect each layer style representation will have on our final target image. Again, we'll only be changing the Target image's style representations as we minimize this loss over some number of iterations. So, now we have the content loss, which tells us how close the content of our target image is to that of our content image and the style loss, which tells us how close our target is in style to our style image. We can now add these losses together to get the total loss, and then use typical back propagation and optimization to reduce this loss by iteratively changing the target image to match our desired content and style.
 
