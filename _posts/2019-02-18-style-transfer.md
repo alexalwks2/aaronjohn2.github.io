@@ -9,8 +9,8 @@ categories: CNN, Convolutional Neural Network, style transfer, PyTorch, VGG 19
 In this documentation I will discuss the steps to take in implementing the style transfer algorithm. Style transfer allows you to apply the style of one image to another image of your choice. For example, here I have chosen a Salvador Dali painting for my style image, and I chose a rowing picture of myself for my Content image in order to produce this final style transfer image as shown below.
 
 <div class="imgcap">
-<img src="/assets/bass/memory.jpg" height="300" width="500">
-<img src="/assets/bass/rowing_style_change.png" height="300">
+<img src="/assets/bass/pollock.jpg" height="300" width="500">
+<img src="/assets/bass/style_transfer.png" height="300">
 </div>
 
 The key to this technique is using a trained CNN (Convolutional Neural Networks) to separate the content from the style of an image. If you can do this, then you can merge the content of one image, with the style of another and create something entirely different.
@@ -177,7 +177,7 @@ Here, we will go over an implementation of style transfer following the deatils 
     ```
     <div class="imgcap">
     <img src="/assets/bass/rowing.jpg">
-    <img src="/assets/bass/memory.jpg">
+    <img src="/assets/bass/pollock.jpg">
     </div>
 
 7. Next, we know we eventually have to pass our content and style images through our VGG network, and extract content and style features from particular layers. Below we have a get_features function which takes in an image and returns the outputs from layers that correspond to our content and style representations. This is going to be a list of features that are taken at particular layers in our VGG 19 model.
@@ -318,7 +318,7 @@ Here, we will go over an implementation of style transfer following the deatils 
     ax2.imshow(im_convert(target))
     ```
     <div class="imgcap">
-    <img src="/assets/bass/rowing_style_change.png">
+    <img src="/assets/bass/style_transfer.png">
     </div>
 
 **References**
