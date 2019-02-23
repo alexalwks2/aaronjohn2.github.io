@@ -20,7 +20,6 @@ However, I personally like to be efficient and save time while completing my day
 1. First we will start off by importing the the necessary modules to complete the task. Here, I added a shebang at the beginning of the script, so that the script recognizes the interpreter type when you execute the script from shell. Here, by using the subprocess module, we can execute system commands from the script. The optparse module will help us handle user input command line arguments. Finally, the re module will help us extract a substring using regex.
     ```shell
     #!usr/bin/env python
-
     import subprocess
     import optparse
     import re
