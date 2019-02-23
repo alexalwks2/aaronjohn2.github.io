@@ -9,11 +9,11 @@ categories: Python, subprocess, optparse, re, interface, MAC address, Kali
 A MAC address is a permanent, physical and unique address that is assigned to a network interface--by the device manufacturer. However, some people, like me, would like to increase anonymity, impersonate other devices, or even bypass filters. Hence, by changing the MAC address one can accomplish that.
 
 Usually, in terminal, by typing three lines of system commands, one can change the MAC address of a specific interface. For example, if I want to change the MAC address of wlan0, I would type the following.
-    ```shell
-    ifconfig wlan0 down
-    ifconfig wlan0 hw ether 00:11:22:33:44:55
-    ifconfig wlan0 up
-    ```
+```shell
+ifconfig wlan0 down
+ifconfig wlan0 hw ether 00:11:22:33:44:55
+ifconfig wlan0 up
+```
 
 However, I personally like to be efficient and save time while completing my day to day tasks. Hence, in this documentation, I will go through the process on how to write a simple Python script that will change the MAC address for us in an instant. Therefore, instead of executing three lines of system commands, we will be down to executing just one line of system command.
 
