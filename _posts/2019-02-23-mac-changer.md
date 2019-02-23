@@ -8,7 +8,7 @@ categories: Python, subprocess, optparse, re, interface, MAC address, Kali
 
 A MAC address is a permanent, physical and unique address that is assigned to a network interface--by the device manufacturer. However, some people, like me, would like to increase anonymity, impersonate other devices, or even bypass filters. Hence, by changing the MAC address one can accomplish that.
 
-Usually, in terminal, by typing three lines of system commands, one can change the MAC address of a specific interface. For example, if I want to change the MAC address of wlan0, I would type the following:
+Usually, in terminal, by typing three lines of system commands, one can change the MAC address of a specific interface. For example, if I want to change the MAC address of wlan0, I would type the following.
     ```shell
     ifconfig wlan0 down
     ifconfig wlan0 hw ether 00:11:22:33:44:55
