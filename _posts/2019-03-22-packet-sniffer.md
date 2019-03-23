@@ -58,7 +58,7 @@ Let's jump right into how to build a Packet Sniffer tool. For this tool we will 
                 print("\n\n[+] Possible Username/Password >> " + login_info + "\n\n")
     ```
 
-6. Finally, we will specify the interface that is to be sniffed. The specified interface needs to have packets flowing through it. For example, this is achieved after a target Client and Access Point have been ARP spoofed, causing packets to redirect flow of packets through the interface that is used to spoof.
+6. Finally, we will call the sniff function and pass in the specific interface that is to be sniffed. The specified interface needs to have packets flowing through it. For example, this is achieved after a target Client and Access Point have been ARP spoofed, causing packets to redirect flow of packets through the interface that is used to spoof.
     ```python
     sniff(eth0)
     ```
