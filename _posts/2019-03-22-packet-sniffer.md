@@ -9,10 +9,10 @@ categories: Python, Packet Sniffer, Kali, scapy, Application Layer, HTTP, MITM
 In this documentation, I will go through the process on how to write a Packet Sniffer tool in Python which can sniff (capture) data flowing through an interface, filter this data, and display information on terminal like: visited websites, usernames, passwords, images and files downloaded.
 
 Here, in order to capture data, you would need to already be the MITM (Man In The Middle) by using ARP table poisoning, or via any other method. For this tool we will be using the module scapy. To install scapy do the following.
-    ```python
-    pip install scapy
-    pip install scapy_http
-    ```
+```python
+pip install scapy
+pip install scapy_http
+```
 Note: scappy http module is used to filter for the HTTP layer.
 Let's jump right into how to build a Packet Sniffer tool. For this tool we will build a packet sniffer that analyzes what website the client requests, and if they type in any username or password on that specific website we will capture that data and view it on our terminal.
 
