@@ -13,8 +13,7 @@ Here, in order to capture data, you would need to already be the MITM (Man In Th
 pip install scapy
 pip install scapy_http
 ```
-Note: scappy http module is used to filter for the HTTP layer.
-Let's jump right into how to build a Packet Sniffer tool. For this tool we will build a packet sniffer that analyzes what website the client requests, and if they type in any username or password on that specific website we will capture that data and view it on our terminal.
+Note: scappy http module is used to filter for the HTTP layer. For this tool, we will build a packet sniffer that analyzes what website the client requests, and if they type in any username or password on that specific website, we will capture that data and print it out on our terminal.
 
 1. In order to sniff data that is being sent to or from one of our computer interfaces, we will use a function called sniff that comes in the module scapy, but before we can use it let's import all the necessary libraries.
     ```python
